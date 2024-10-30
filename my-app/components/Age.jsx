@@ -49,14 +49,14 @@ export default function AgeVerification() {
               animate={{ y: [0, -10, 0] }} // Bouncing effect
               transition={{ repeat: Infinity, duration: 2 }}
             />
-            <h2 className="text-xl font-bold mb-4">VÉRIFICATION D'ÂGE</h2>
+            <h2 className="text-xl font-bold mb-4">VÉRIFICATION D{"'"}ÂGE</h2>
             <p className="text-gray-600 mb-4">
-              Les produits disponibles sur Vape Hood sont réservés aux adultes d'âge légal uniquement. En entrant sur notre site Web, vous affirmez que vous êtes d'âge légal pour fumer dans votre juridiction et que vous acceptez d'être vérifié par l'âge.
+              Les produits disponibles sur Vape Hood sont réservés aux adultes d{"'"}âge légal uniquement. En entrant sur notre site Web, vous affirmez que vous êtes d{"'"}âge légal pour fumer dans votre juridiction et que vous acceptez d{"'"}être vérifié par l{"'"}âge.
             </p>
             <p className="text-red-500 font-semibold mb-4">
               Nous ne livrerons pas à toute personne de moins de 21 ans.
             </p>
-            <h3 className="font-medium text-lg mb-4">ÊTES-VOUS D'ÂGE LÉGAL POUR FUMER ?</h3>
+            <h3 className="font-medium text-lg mb-4">ÊTES-VOUS D{"'"}ÂGE LÉGAL POUR FUMER ?</h3>
             <div className="flex justify-center space-x-4">
               <button
                 onClick={() => handleVerification('no')}
@@ -97,7 +97,7 @@ export default function AgeVerification() {
         >
           <div className="bg-white rounded-lg p-8 text-center max-w-sm w-full">
             <h1 className="text-3xl font-bold mb-4 text-red-600">Accès Refusé</h1>
-            <p className="text-gray-600 mb-4">Vous devez avoir l'âge légal pour fumer afin d'entrer sur ce site.</p>
+            <p className="text-gray-600 mb-4">Vous devez avoir l{"'"}âge légal pour fumer afin d{"'"}entrer sur ce site.</p>
           </div>
         </motion.div>
       )}

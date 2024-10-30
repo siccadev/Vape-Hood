@@ -271,7 +271,7 @@ const ProductComponent = () => {
 
       <div className="  py-8 px-2  main_width">
       <h2 className="font-extrabold text-3xl  font-sans text-center mb-6" style={{ color: 'red' }}>
-          Achetez vos puffs avant qu'il ne soit trop tard
+          Achetez vos puffs avant qu{"'"}il ne soit trop tard
         </h2>
         <p className="text-center text-gray-500 mb-8">Explorez notre sélection soigneusement choisie de puffs, offrant une expérience unique de vapotage.</p>
 

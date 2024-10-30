@@ -392,7 +392,7 @@ const ProductComponent = () => {
           Tous Les Liquides Pour Les Cigarettes Electroniques à Bas Prix en tunisie
         </h2>
         <p className="text-center text-gray-500 mb-8">
-          Bienvenue dans notre sélection d'E-liquides, soigneusement choisie pour satisfaire les passionnés de la vape en Tunisie. Découvrez une gamme diversifiée de saveurs exquises et de marques renommées, conçues pour offrir une expérience de vape unique.
+          Bienvenue dans notre sélection d{"'"}E-liquides, soigneusement choisie pour satisfaire les passionnés de la vape en Tunisie. Découvrez une gamme diversifiée de saveurs exquises et de marques renommées, conçues pour offrir une expérience de vape unique.
         </p>
 
         {loading ? (

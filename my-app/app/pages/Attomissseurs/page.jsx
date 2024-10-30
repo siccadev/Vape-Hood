@@ -260,7 +260,7 @@ const ProductComponent = () => {
           Atomiseurs reconstructibles, votre tank au meilleur prix en tunisie
 
         </h2>
-        <p className="text-center text-gray-500 mb-8">Bienvenue dans notre collection d'atomiseurs, conçue pour les passionnés de la vape en Tunisie. Chez [Nom de votre Boutique], nous vous proposons une sélection soigneusement choisie d'atomiseurs de qualité, (Atomiseurs Sub-ohm ,RDTA ,RTA et Atomiseurs MTL).</p>
+        <p className="text-center text-gray-500 mb-8">Bienvenue dans notre collection d{"'"}atomiseurs, conçue pour les passionnés de la vape en Tunisie. Chez [Nom de votre Boutique], nous vous proposons une sélection soigneusement choisie d{"'"}atomiseurs de qualité, (Atomiseurs Sub-ohm ,RDTA ,RTA et Atomiseurs MTL).</p>
 
         {loading ? (
           <div className="flex justify-center items-center h-64 bg-white">

@@ -477,7 +477,7 @@ const Checkout = () => {
                                           setShowModal(false);
                                           window.location.href = "/";
                                     }}>
-                                          Retour à l'accueil
+                                          Retour à l{"'"}accueil
                                     </button>
                               </div>
                         </div>

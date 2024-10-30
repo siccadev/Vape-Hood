@@ -14,15 +14,15 @@ const Footer = () => {
             <ul className="text-gray-300 font-medium space-y-2">
               <li className="flex items-center">
                 <FaFacebook className="mr-2 text-gray-400 hover:text-white transition duration-300" />
-                <a href="https://www.facebook.com/vape.hood.kef" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <Link href="https://www.facebook.com/vape.hood.kef" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   Facebook
-                </a>
+                </Link>
               </li>
               <li className="flex items-center">
                 <FaInstagram className="mr-2 text-gray-400 hover:text-white transition duration-300" />
-                <a href="https://www.instagram.com/vape.hood.kef/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <Link href="https://www.instagram.com/vape.hood.kef/" target="_blank" rel="noopener noreferrer" className="hover:underline">
                   Instagram
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -33,11 +33,11 @@ const Footer = () => {
             <ul className="text-gray-300 font-medium space-y-2">
               <li className="flex items-center">
                 <AiOutlineMail className="mr-2 text-gray-400 hover:text-white transition duration-300" />
-                <a href="mailto:support@vapehood.com" className="hover:underline">aziztouati102@gmail.com </a>
+                <Link href="mailto:support@vapehood.com" className="hover:underline">aziztouati102@gmail.com </Link>
               </li>
               <li className="flex items-center">
                 <FaWhatsapp className="mr-2 text-gray-400 hover:text-white transition duration-300" />
-                <a href="https://wa.me/+21696877429" target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp</a>
+                <Link href="https://wa.me/+21696877429" target="_blank" rel="noopener noreferrer" className="hover:underline">WhatsApp</Link>
               </li>
             </ul>
           </div>
@@ -47,9 +47,9 @@ const Footer = () => {
             <h2 className="mb-2 text-sm font-semibold text-gray-400 uppercase">Notre magasin</h2>
             <div className="flex items-center">
               <FaMapMarkerAlt className="mr-2 text-gray-400 hover:text-white transition duration-300" size={24} />
-              <a href="https://www.google.com/maps/place/Vape+hood+El+Kef/@36.1795641,8.710374,17z/data=!3m1!4b1!4m6!3m5!1s0x12fba5001e70c1b7:0x5630204ba4e8805d!8m2!3d36.1795641!4d8.7129489!16s%2Fg%2F11vq7qykzf?entry=ttu&g_ep=EgoyMDI0MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-300">
+              <Link href="https://www.google.com/maps/place/Vape+hood+El+Kef/@36.1795641,8.710374,17z/data=!3m1!4b1!4m6!3m5!1s0x12fba5001e70c1b7:0x5630204ba4e8805d!8m2!3d36.1795641!4d8.7129489!16s%2Fg%2F11vq7qykzf?entry=ttu&g_ep=EgoyMDI0MDkzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-300">
                 Trouvez-nous sur Google Maps
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -58,10 +58,10 @@ const Footer = () => {
             <h2 className="mb-2 text-sm font-semibold text-gray-400 uppercase">FAQ</h2>
             <ul className="text-gray-300 font-medium space-y-2">
               <li>
-                <a href="/pages/About" className="hover:underline">Qu'est-ce que Vapehood ??</a>
+                <Link href="/pages/About" className="hover:underline">Qu{"'"}est-ce que Vapehood ??</Link>
               </li>
               <li>
-                <a href="/pages/Contact" className="hover:underline">Comment contacter le service client ??</a>
+                <Link href="/pages/Contact" className="hover:underline">Comment contacter le service client ??</Link>
               </li>
             </ul>
           </div>
@@ -71,7 +71,7 @@ const Footer = () => {
             <h2 className="mb-2 text-sm font-semibold text-gray-400 uppercase">Offres Spéciales</h2>
             <ul className="text-gray-300 font-medium space-y-2">
               <li>
-                <a href="/" className="hover:underline">Notre Offre</a>
+                <Link href="/" className="hover:underline">Notre Offre</Link>
               </li>
               {/* <li>
                 <a href="#offer2" className="hover:underline">Offre du jour 2</a>
@@ -88,18 +88,18 @@ const Footer = () => {
             © 2024 <a href="/" className="hover:underline text-gray-300">Vapehood</a>. All rights reserved.
           </div>
           <div className="flex space-x-6">
-            <a href="https://www.facebook.com/vape.hood.kef" className="text-gray-400 hover:text-white transition duration-300">
+            <Link href="https://www.facebook.com/vape.hood.kef" className="text-gray-400 hover:text-white transition duration-300">
               <FaFacebook size={24} />
-            </a>
-            <a href="https://www.instagram.com/vape.hood.kef/" className="text-gray-400 hover:text-white transition duration-300">
+            </Link>
+            <Link href="https://www.instagram.com/vape.hood.kef/" className="text-gray-400 hover:text-white transition duration-300">
               <FaInstagram size={24} />
-            </a>
-            <a href="mailto:aziztouati102@gmail.com " className="text-gray-400 hover:text-white transition duration-300">
+            </Link>
+            <Link href="mailto:aziztouati102@gmail.com " className="text-gray-400 hover:text-white transition duration-300">
               <FaEnvelope size={24} />
-            </a>
-            <a href="https://wa.me/+21696877429" className="text-gray-400 hover:text-white transition duration-300">
+            </Link>
+            <Link href="https://wa.me/+21696877429" className="text-gray-400 hover:text-white transition duration-300">
               <FaWhatsapp size={24} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

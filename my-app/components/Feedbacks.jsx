@@ -58,7 +58,7 @@ export default function Home() {
     <>
       <Head>
         <title>Commentaires Professionnels</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+        
       </Head>
 
       {/* Page Content */}

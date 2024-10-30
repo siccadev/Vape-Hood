@@ -167,7 +167,7 @@ const ProductPage = () => {
                     <h1 className="product-title">{product?.name || "Produit"}</h1>
                     <div className="product-description">
                         <p>
-                            Le modèle <span className="highlighted-text">{product?.name || "Produit"}</span> est l'une des séries les plus populaires...
+                            Le modèle <span className="highlighted-text">{product?.name || "Produit"}</span> est l{"'"}une des séries les plus populaires...
                         </p>
                     </div>
                     <div className="categories">

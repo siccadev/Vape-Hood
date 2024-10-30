@@ -38,7 +38,7 @@ const Cart = () => {
           <h1 className="text-2xl font-bold mb-2">Panier</h1>
           <hr />
           <p className="mt-4 mb-4 font-semibold">
-            Il n'y a plus d'articles dans votre panier
+            Il n{"'"}y a plus d{"'"}articles dans votre panier
           </p>
           <hr />
           <div className="mt-4 p-4 bg-gray-100 rounded-lg flex justify-between items-center">

@@ -8,7 +8,7 @@ const About = () => {
       <section>
         <h2>Notre Histoire</h2>
         <p>
-          Découvrez comment notre parcours a commencé, notre passion pour l'industrie de la vape et notre engagement envers nos clients.
+          Découvrez comment notre parcours a commencé, notre passion pour l{"'"}industrie de la vape et notre engagement envers nos clients.
         </p>
       </section>
 
@@ -22,7 +22,7 @@ const About = () => {
       <section>
         <h2>Notre Sélection</h2>
         <p>
-          Explorez notre vaste sélection de vapes et d'accessoires soigneusement choisis pour répondre à vos besoins, que vous soyez novice ou expert. Nous sommes fiers d'offrir des produits de haute qualité provenant de marques réputées pour garantir votre plaisir et votre sécurité.
+          Explorez notre vaste sélection de vapes et d{""}accessoires soigneusement choisis pour répondre à vos besoins, que vous soyez novice ou expert. Nous sommes fiers d{""}offrir des produits de haute qualité provenant de marques réputées pour garantir votre plaisir et votre sécurité.
         </p>
       </section>
 
@@ -36,16 +36,16 @@ const About = () => {
       <section>
         <h2>Notre Communauté</h2>
         <p>
-          Rejoignez une communauté dynamique d'amateurs de vape. Nous organisons des événements, partageons des conseils et créons un espace où les passionnés de vape peuvent se connecter et échanger.
+          Rejoignez une communauté dynamique d{""}amateurs de vape. Nous organisons des événements, partageons des conseils et créons un espace où les passionnés de vape peuvent se connecter et échanger.
         </p>
       </section>
 
       <section>
         <h2>Contactez-Nous</h2>
         <p>
-          N'hésitez pas à nous contacter pour toute assistance, conseil ou simplement pour partager votre expérience. Nous sommes ici pour vous aider à profiter pleinement de votre parcours dans le monde de la vape.
+          N{""}hésitez pas à nous contacter pour toute assistance, conseil ou simplement pour partager votre expérience. Nous sommes ici pour vous aider à profiter pleinement de votre parcours dans le monde de la vape.
         </p>
-        <p className="note">NB : Nous n'acceptons pas les paiements par chèque ! Merci</p>
+        <p className="note">NB : Nous n{"'"}acceptons pas les paiements par chèque ! Merci</p>
       </section>
     </div>
   );
