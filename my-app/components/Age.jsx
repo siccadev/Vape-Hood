@@ -8,9 +8,10 @@ export default function AgeVerification() {
   const [showDeny, setShowDeny] = useState(false);
 
   useEffect(() => {
-    // Check localStorage on the client side to set isVerified
-    const verified = typeof window !== 'undefined' ? localStorage.getItem('ageVerified') === 'true' : false;
-    setIsVerified(verified);
+    if (typeof window !== 'undefined') {
+      const verified = localStorage.getItem('ageVerified') === 'true';
+      setIsVerified(verified);
+    }
   }, []);
 
   const handleVerification = (answer) => {
@@ -19,9 +20,7 @@ export default function AgeVerification() {
       setTimeout(() => {
         setShowWelcome(false);
         setIsVerified(true);
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('ageVerified', 'true');
-        }
+        localStorage.setItem('ageVerified', 'true');
       }, 1000);
     } else {
       setShowDeny(true);
