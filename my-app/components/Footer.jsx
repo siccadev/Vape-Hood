@@ -71,7 +71,7 @@ const Footer = () => {
             <h2 className="mb-2 text-sm font-semibold text-gray-400 uppercase">Offres Spéciales</h2>
             <ul className="text-gray-300 font-medium space-y-2">
               <li>
-                <Link href="" className="hover:underline">Notre Offre</Link>
+                <Link href="/" className="hover:underline">Notre Offre</Link>
               </li>
             </ul>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
         {/* Footer Bottom Section */}
         <div className="flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:space-y-0">
           <div className="text-center text-sm text-gray-400">
-            © 2024 <a href="/" className="hover:underline text-gray-300">Vapehood</a>. All rights reserved.
+            © 2024 <Link href="/" className="hover:underline text-gray-300">Vapehood</Link>. All rights reserved.
           </div>
           <div className="flex space-x-6">
             <Link href="https://www.facebook.com/vape.hood.kef" className="text-gray-400 hover:text-white transition duration-300">
