@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect, Suspense } from "react"; // Import Suspense
+import React, { useRef, useState, useEffect, Suspense } from "react";
 import "./SingleProduct.css";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -14,17 +14,17 @@ const ProductPage = () => {
     const [cartTotal, setCartTotal] = useState(0);
 
     const params = useSearchParams();
-    const id = params.get("id");
-    const name = params.get("name");
-    const price = params.get("price");
-    const image = params.get("image");
-    const description = params.get("description");
-    const categories = params.get("categories");
-
     const lensRef = useRef(null);
     const resultRef = useRef(null);
 
     useEffect(() => {
+        const id = params.get("id");
+        const name = params.get("name");
+        const price = params.get("price");
+        const image = params.get("image");
+        const description = params.get("description");
+        const categories = params.get("categories");
+
         if (id && name && price && image && categories) {
             setProduct({
                 id: String(id),
@@ -35,7 +35,7 @@ const ProductPage = () => {
                 categories,
             });
         }
-    }, [id, name, price, image, description, categories]);
+    }, [params]);
 
     const handleMouseMove = throttle((e) => {
         const lens = lensRef.current;
