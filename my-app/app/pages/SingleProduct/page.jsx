@@ -106,33 +106,35 @@ const ProductPage = () => {
             console.error("Product data is missing.");
             return;
         }
-
+    
         console.log("Adding to cart:", product, "Quantity:", quantity);
-
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        const newItem = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            quantity,
-        };
-
-        const existingItemIndex = cart.findIndex((item) => item.name === product.name);
-
-        if (existingItemIndex >= 0) {
-            cart[existingItemIndex].quantity += quantity;
-        } else {
-            cart.push(newItem);
+            if (typeof window !== 'undefined') {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+            const newItem = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity,
+            };
+    
+            const existingItemIndex = cart.findIndex((item) => item.name === product.name);
+    
+            if (existingItemIndex >= 0) {
+                cart[existingItemIndex].quantity += quantity;
+            } else {
+                cart.push(newItem);
+            }
+    
+            localStorage.setItem("cart", JSON.stringify(cart));
+    
+            const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+            setCartTotal(total);
+            setShowPopup(true);
         }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-        setCartTotal(total);
-        setShowPopup(true);
     };
+    
 
     const closePopup = () => {
         setShowPopup(false);

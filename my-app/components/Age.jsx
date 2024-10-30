@@ -1,28 +1,33 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Importing Framer Motion for animations
+import { motion } from 'framer-motion';
 
 export default function AgeVerification() {
-  const [isVerified, setIsVerified] = useState(() => {
-    // Initialize the state based on localStorage during first render
-    return localStorage.getItem('ageVerified') === 'true';
-  });
+  const [isVerified, setIsVerified] = useState(false); // Initialize to false
   const [showWelcome, setShowWelcome] = useState(false);
   const [showDeny, setShowDeny] = useState(false);
+
+  useEffect(() => {
+    // Check localStorage on the client side to set isVerified
+    if (typeof window !== 'undefined') {
+      const verified = localStorage.getItem('ageVerified') === 'true';
+      setIsVerified(verified);
+    }
+  }, []);
 
   const handleVerification = (answer) => {
     if (answer === 'yes') {
       setShowWelcome(true);
       setTimeout(() => {
         setShowWelcome(false);
-        setIsVerified(true); // After the welcome animation (1 second), allow access
-        localStorage.setItem('ageVerified', 'true'); // Store the verification flag in localStorage
-      }, 1000); // 1 second delay for the animation
+        setIsVerified(true);
+        localStorage.setItem('ageVerified', 'true');
+      }, 1000);
     } else {
-      setShowDeny(true); // Show "Access Denied" popup
+      setShowDeny(true);
       setTimeout(() => {
-        window.location.href = 'https://google.com'; // Redirect after 2 seconds
-      }, 2000); // Delay before redirecting
+        window.location.href = 'https://google.com';
+      }, 2000);
     }
   };
 
@@ -37,16 +42,16 @@ export default function AgeVerification() {
 
   return (
     <>
-      {/* Modal de Vérification d'Âge */}
+      {/* Age Verification Modal */}
       {!showWelcome && !showDeny && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg shadow-lg p-8 text-center max-w-sm w-full md:max-w-md">
             <motion.img
-              src="/vapehood.png" // Replace this with the actual path of your logo
+              src="/vapehood.png"
               alt="Vape Hood"
               className="mx-auto mb-4"
               initial={{ y: 0 }}
-              animate={{ y: [0, -10, 0] }} // Bouncing effect
+              animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
             />
             <h2 className="text-xl font-bold mb-4">VÉRIFICATION D{"'"}ÂGE</h2>

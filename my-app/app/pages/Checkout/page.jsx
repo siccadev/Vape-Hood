@@ -25,9 +25,11 @@ const Checkout = () => {
       const [cartItems, setCartItems] = useState([]);
 
       useEffect(() => {
-            const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
-            setCartItems(storedCartItems);
-      }, []);
+            if (typeof window !== 'undefined') {
+            
+                        const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+                        setCartItems(storedCartItems);} 
+                  }, []);
 
       const handleChange = (e) => {
             const { name, value, id, checked } = e.target;
@@ -473,12 +475,14 @@ const Checkout = () => {
                                     <h2>Commande confirmée</h2>
                                     <p>Nous vous contacterons pour confirmer la commande.</p>
                                     <button onClick={() => {
-                                          localStorage.clear();
-                                          setShowModal(false);
-                                          window.location.href = "/";
-                                    }}>
-                                          Retour à l{"'"}accueil
-                                    </button>
+                                              if (typeof window !== 'undefined') {
+                                                localStorage.clear();
+                                                 window.location.href = "/";
+                                                }
+                                                setShowModal(false);
+                                                }}>
+                                                       Retour à l{"'"}accueil
+                                                       </button>
                               </div>
                         </div>
                   )}

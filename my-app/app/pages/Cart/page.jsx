@@ -6,17 +6,22 @@ import Link from "next/link";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-  const [deletingItemId, setDeletingItemId] = useState(null);
 
   useEffect(() => {
-    const storedCartItems = JSON.parse(window.localStorage.getItem("cart")) || [];
-    setCartItems(storedCartItems);
+    // Only access localStorage on the client side
+    if (typeof window !== 'undefined') {
+      const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      setCartItems(storedCartItems);
+    }
   }, []);
 
   const handleRemoveItem = (name) => {
     const updatedCartItems = cartItems.filter((item) => item.name !== name);
     setCartItems(updatedCartItems);
-    window.localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    }
   };
 
   const handleUpdateQuantity = (name, delta) => {
@@ -28,7 +33,10 @@ const Cart = () => {
       return item;
     });
     setCartItems(updatedCartItems);
-    window.localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    }
   };
 
   return (
