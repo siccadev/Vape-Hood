@@ -142,7 +142,7 @@ const ProductPage = () => {
     };
 
     return (
-        <Suspense fallback={<div>Loading...</div>}> {/* Wrap with Suspense */}
+        <Suspense>
             <div className="main_section">
                 <div>
                     <p className="main-title">{product?.name || "Produit"}</p>

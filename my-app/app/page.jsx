@@ -1,4 +1,4 @@
-import React from "react";
+import React, {  Suspense } from "react"; // Import Suspense
 import "@/styles/globals.css";
 import Product from "@/components/Product";
 import ProductHero from "@/components/ProductHero";
@@ -47,6 +47,8 @@ const Home = () => {
 
 
   return (
+    <Suspense>
+
     <div>
       <Age />
       <Offre />
@@ -268,6 +270,8 @@ const Home = () => {
       ]} />
       <Feedback />
     </div>
+    </Suspense>
+
   );
 
 };
