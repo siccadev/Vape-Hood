@@ -169,7 +169,7 @@ const ProductComponent = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const totalPages = Math.ceil(products.length / itemsPerPage);
-  const [priceRange, setPriceRange] = useState([28, 400]);
+  const [priceRange, setPriceRange] = useState([10, 400]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedMarque, setSelectedMarque] = useState("");
   const [selectedDisponibilite, setSelectedDisponibilite] = useState("");
@@ -313,7 +313,7 @@ const ProductComponent = () => {
           <label className="block mb-1">Prix (TND)</label>
           <Slider
             range
-            min={29}
+            min={10}
             max={400}
             step={1}
             value={priceRange}

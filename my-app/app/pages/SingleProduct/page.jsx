@@ -12,30 +12,42 @@ const ProductPage = () => {
     const [product, setProduct] = useState(null);
     const [showPopup, setShowPopup] = useState(false);
     const [cartTotal, setCartTotal] = useState(0);
+    const [urlParams, setParams] = useState(null); // Add a state to handle params safely
 
-    const params = useSearchParams();
     const lensRef = useRef(null);
     const resultRef = useRef(null);
 
     useEffect(() => {
-        const id = params.get("id");
-        const name = params.get("name");
-        const price = params.get("price");
-        const image = params.get("image");
-        const description = params.get("description");
-        const categories = params.get("categories");
+        if (typeof window !== "undefined") {
+            const urlParams = new URLSearchParams(window.location.search);
 
-        if (id && name && price && image && categories) {
-            setProduct({
-                id: String(id),
-                name,
-                price: parseFloat(price),
-                image,
-                description,
-                categories,
-            });
+            setParams(urlParams);
         }
-    }, [params]);
+    }, []);
+
+    useEffect(() => {
+        if (urlParams) {
+            const id = urlParams.get("id");
+            const name = urlParams.get("name");
+            // and so on...
+            
+            const price = urlParams.get("price");
+            const image = urlParams.get("image");
+            const description = urlParams.get("description");
+            const categories = urlParams.get("categories");
+
+            if (id && name && price && image && categories) {
+                setProduct({
+                    id: String(id),
+                    name,
+                    price: parseFloat(price),
+                    image,
+                    description,
+                    categories,
+                });
+            }
+        }
+    }, [urlParams]);
 
     const handleMouseMove = throttle((e) => {
         const lens = lensRef.current;
@@ -106,12 +118,12 @@ const ProductPage = () => {
             console.error("Product data is missing.");
             return;
         }
-    
+
         console.log("Adding to cart:", product, "Quantity:", quantity);
-    
-        if (typeof window !== 'undefined') {
+
+        if (typeof window !== "undefined") {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
+
             const newItem = {
                 id: product.id,
                 name: product.name,
@@ -119,23 +131,22 @@ const ProductPage = () => {
                 image: product.image,
                 quantity,
             };
-    
+
             const existingItemIndex = cart.findIndex((item) => item.name === product.name);
-    
+
             if (existingItemIndex >= 0) {
                 cart[existingItemIndex].quantity += quantity;
             } else {
                 cart.push(newItem);
             }
-    
+
             localStorage.setItem("cart", JSON.stringify(cart));
-    
+
             const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
             setCartTotal(total);
             setShowPopup(true);
         }
     };
-    
 
     const closePopup = () => {
         setShowPopup(false);
