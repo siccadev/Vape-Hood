@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, Suspense } from "react"; // Import Suspense
 import "./SingleProduct.css";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
@@ -19,7 +19,7 @@ const ProductPage = () => {
     const price = params.get("price");
     const image = params.get("image");
     const description = params.get("description");
-    const categories = params.get("categories");  // Updated to "categories"
+    const categories = params.get("categories");
 
     const lensRef = useRef(null);
     const resultRef = useRef(null);
@@ -32,7 +32,7 @@ const ProductPage = () => {
                 price: parseFloat(price),
                 image,
                 description,
-                categories, // Updated field name here
+                categories,
             });
         }
     }, [id, name, price, image, description, categories]);
@@ -108,7 +108,8 @@ const ProductPage = () => {
         }
     
         console.log("Adding to cart:", product, "Quantity:", quantity);
-            if (typeof window !== 'undefined') {
+    
+        if (typeof window !== 'undefined') {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
             const newItem = {
@@ -141,129 +142,131 @@ const ProductPage = () => {
     };
 
     return (
-        <div className="main_section">
-            <div>
-                <p className="main-title">{product?.name || "Produit"}</p>
-                <hr className="hr_line" />
-            </div>
-            <div className="section1">
-                <div className="section1_right">
-                    <div
-                        className="image-container"
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <Image
-                            src={product?.image || "/default-image.jpg"}
-                            alt={product?.name || "Produit"}
-                            width={760}
-                            height={500}
-                            className="product-image"
-                        />
-                        <div className="zoom-lens" ref={lensRef}></div>
-                        <div className="zoom-result" ref={resultRef}></div>
+        <Suspense fallback={<div>Loading...</div>}> {/* Wrap with Suspense */}
+            <div className="main_section">
+                <div>
+                    <p className="main-title">{product?.name || "Produit"}</p>
+                    <hr className="hr_line" />
+                </div>
+                <div className="section1">
+                    <div className="section1_right">
+                        <div
+                            className="image-container"
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <Image
+                                src={product?.image || "/default-image.jpg"}
+                                alt={product?.name || "Produit"}
+                                width={760}
+                                height={500}
+                                className="product-image"
+                            />
+                            <div className="zoom-lens" ref={lensRef}></div>
+                            <div className="zoom-result" ref={resultRef}></div>
+                        </div>
+                    </div>
+
+                    <div className="section1_left">
+                        <h1 className="product-title">{product?.name || "Produit"}</h1>
+                        <div className="product-description">
+                            <p>
+                                Le modèle <span className="highlighted-text">{product?.name || "Produit"}</span> est l{"'"}une des séries les plus populaires...
+                            </p>
+                        </div>
+                        <div className="categories">
+                            <span className="category-label">Catégories:</span>
+                            <span className="category-info">{product?.categories}</span>
+                        </div>
+                        <div className="price-container">
+                            <span className="current-price">{product?.price ? `${product.price.toFixed(2)} TND` : "Prix"}</span>
+                            <span className="tax-info">TTC</span>
+                        </div>
+                        <div className="availability">
+                            <span className="availability-label">Disponibilité:</span>
+                            <span className="availability-status">En Stock</span>
+                            <span className="availability-icon">✔️</span>
+                        </div>
+                        <div className="quantity-cart ">
+                            <label className="quantity-label">Quantité:</label>
+                            <div className="quantity-controls">
+                                <button className="quantity-button" onClick={handleDecrease}>
+                                    -
+                                </button>
+                                <input
+                                    type="number"
+                                    value={quantity}
+                                    onChange={handleInputChange}
+                                    className="quantity-input"
+                                />
+                                <button className="quantity-button" onClick={handleIncrease}>
+                                    +
+                                </button>
+                            </div>
+
+                            <button className="add-to-cart" onClick={addToCart}>
+                                Ajouter Au Panier
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div className="section1_left">
-                    <h1 className="product-title">{product?.name || "Produit"}</h1>
-                    <div className="product-description">
-                        <p>
-                            Le modèle <span className="highlighted-text">{product?.name || "Produit"}</span> est l{"'"}une des séries les plus populaires...
-                        </p>
-                    </div>
-                    <div className="categories">
-                        <span className="category-label">Catégories:</span>
-                        <span className="category-info">{product?.categories}</span> {/* Updated to categories */}
-                    </div>
-                    <div className="price-container">
-                        <span className="current-price">{product?.price ? `${product.price.toFixed(2)} TND` : "Prix"}</span>
-                        <span className="tax-info">TTC</span>
-                    </div>
-                    <div className="availability">
-                        <span className="availability-label">Disponibilité:</span>
-                        <span className="availability-status">En Stock</span>
-                        <span className="availability-icon">✔️</span>
-                    </div>
-                    <div className="quantity-cart ">
-                        <label className="quantity-label">Quantité:</label>
-                        <div className="quantity-controls">
-                            <button className="quantity-button" onClick={handleDecrease}>
-                                -
-                            </button>
-                            <input
-                                type="number"
-                                value={quantity}
-                                onChange={handleInputChange}
-                                className="quantity-input"
-                            />
-                            <button className="quantity-button" onClick={handleIncrease}>
-                                +
-                            </button>
-                        </div>
-
-                        <button className="add-to-cart" onClick={addToCart}>
-                            Ajouter Au Panier
+                <div className="tabs_container">
+                    <div className="tabs">
+                        <button
+                            className={`tab-link ${activeTab === "description" ? "active" : ""}`}
+                            onClick={() => openTab("description")}
+                        >
+                            Description
                         </button>
                     </div>
-                </div>
-            </div>
 
-            <div className="tabs_container">
-                <div className="tabs">
-                    <button
-                        className={`tab-link ${activeTab === "description" ? "active" : ""}`}
-                        onClick={() => openTab("description")}
+                    <div
+                        id="description"
+                        className={`tab-content ${activeTab === "description" ? "active" : ""}`}
                     >
-                        Description
-                    </button>
+                        {product?.description || "description"}
+                    </div>
                 </div>
 
-                <div
-                    id="description"
-                    className={`tab-content ${activeTab === "description" ? "active" : ""}`}
-                >
-                    {product?.description || "description"}
-                </div>
-            </div>
-
-            {showPopup && (
-                <div className="popup-overlay">
-                    <div className="popup-container">
-                        <div className="popup-header">
-                            <span className="popup-title">
-                                <i className="icon-check-circle"></i> Produit ajouté au panier avec succès
-                            </span>
-                            <button className="popup-close" onClick={closePopup}>
-                                &times;
-                            </button>
-                        </div>
-                        <div className="popup-content">
-                            <div className="popup-product-info">
-                                <img src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image" />
-                                <div className="popup-product-details">
-                                    <h3>{product?.name || "Produit"}</h3>
-                                    <p>Quantité: {quantity}</p>
-                                    <p>{product?.price ? `${product.price.toFixed(2)} TND` : "Prix"}</p>
-                                </div>
+                {showPopup && (
+                    <div className="popup-overlay">
+                        <div className="popup-container">
+                            <div className="popup-header">
+                                <span className="popup-title">
+                                    <i className="icon-check-circle"></i> Produit ajouté au panier avec succès
+                                </span>
+                                <button className="popup-close" onClick={closePopup}>
+                                    &times;
+                                </button>
                             </div>
-                            <div className="popup-cart-info">
-                                <p>Il y a {quantity} articles dans votre panier.</p>
-                                <p>Total produits: {cartTotal.toFixed(3)} TND</p>
-                                <p>Frais de port: 8.000 TND</p>
-                                <p>Total: {(cartTotal + 8).toFixed(3)} TND TTC</p>
-                                <div className="popup-actions">
-                                    <Link href="/pages/Cart" className="order-button">Commander</Link>
-                                    <button className="continue-shopping-button" onClick={closePopup}>
-                                        Continuer mes achats
-                                    </button>
+                            <div className="popup-content">
+                                <div className="popup-product-info">
+                                    <img src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image" />
+                                    <div className="popup-product-details">
+                                        <h3>{product?.name || "Produit"}</h3>
+                                        <p>Quantité: {quantity}</p>
+                                        <p>{product?.price ? `${product.price.toFixed(2)} TND` : "Prix"}</p>
+                                    </div>
+                                </div>
+                                <div className="popup-cart-info">
+                                    <p>Il y a {quantity} articles dans votre panier.</p>
+                                    <p>Total produits: {cartTotal.toFixed(3)} TND</p>
+                                    <p>Frais de port: 8.000 TND</p>
+                                    <p>Total: {(cartTotal + 8).toFixed(3)} TND TTC</p>
+                                    <div className="popup-actions">
+                                        <Link href="/pages/Cart" className="order-button">Commander</Link>
+                                        <button className="continue-shopping-button" onClick={closePopup}>
+                                            Continuer mes achats
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </Suspense>
     );
 };
 
