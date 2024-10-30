@@ -1,0 +1,16 @@
+@keyframes moveLogo {
+    0% {
+      transform: translateX(0px); /* Start from original position */
+    }
+    50% {
+      transform: translateX(10px); /* Move slightly to the right */
+    }
+    100% {
+      transform: translateX(0px); /* Return to original position */
+    }
+  }
+  
+  .animate-logo {
+    animation: moveLogo 1s ease-in-out infinite; /* Loop the animation */
+  }
+  

@@ -1,0 +1,17 @@
+.custom-nav {
+    color: black !important; /* Make arrows black */
+    width: 20px; /* Adjust width to make them smaller */
+    height: 20px; /* Adjust height to make them smaller */
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 20px; /* Make the arrow icons smaller */
+  }
+  

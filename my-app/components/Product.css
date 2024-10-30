@@ -1,0 +1,37 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.rotate-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px; 
+}
+
+.rotate-image {
+  transition: transform 0.4s ease; 
+  border-radius: 12px; 
+}
+
+/* Zoom in on hover */
+.group:hover .rotate-image {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Optional: Adjust hover opacity for a better visual effect */
+.group:hover .absolute {
+  opacity: 0.8;
+}
+
+.rotate-container {
+  width: 100%; /* Full width of the parent */
+  height: 200px; /* Adjust the height as necessary */
+  position: relative; /* Needed for layout fill */
+}
+
+.rotate-image {
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.group:hover .rotate-image {
+  transform: scale(1.05);
+}

@@ -1,0 +1,30 @@
+.main_body {
+      margin-top: 40px;
+      min-height: 72vh;
+}
+
+
+@media (max-width: 768px) {
+      .main_body {
+            min-height: 400px;
+
+
+      }
+}
+
+.commander_not_allowed {
+      cursor: not-allowed;
+      background-color: gray;
+      color: rgba(0, 0, 0, 0.315);
+}
+
+
+
+
+@media (max-width: 768px) {
+      .ml {
+            display: flex;
+            /* margin-left: 400px; */
+
+      }
+}
