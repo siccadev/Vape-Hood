@@ -40,9 +40,9 @@ const products = [
   { id: 33, name: 'Drip tip', image: '/hh.jpeg', originalPrice: '18,000 TND', Catégories: "RDA", Disponibilité: "En stock", Marque: "Drip tip" },
 ];
 
-const categories = [...new Set(products.map((product) => product.Catégories))];
-const marques = [...new Set(products.map((product) => product.Marque))];
-const disponibilites = [...new Set(products.map((product) => product.Disponibilité))];
+const categories = [...new Set(products .map((product) => product.Catégories))];
+const marques = [...new Set(products .map((product) => product.Marque))];
+const disponibilites = [...new Set(products .map((product) => product.Disponibilité))];
 
 const itemsPerPage = 9;
 
