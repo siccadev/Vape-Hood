@@ -71,11 +71,8 @@ const Footer = () => {
             <h2 className="mb-2 text-sm font-semibold text-gray-400 uppercase">Offres Spéciales</h2>
             <ul className="text-gray-300 font-medium space-y-2">
               <li>
-                <Link href="/" className="hover:underline">Notre Offre</Link>
+                <Link href="" className="hover:underline">Notre Offre</Link>
               </li>
-              {/* <li>
-                <a href="#offer2" className="hover:underline">Offre du jour 2</a>
-              </li> */}
             </ul>
           </div>
         </div>
