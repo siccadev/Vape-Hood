@@ -8,7 +8,6 @@ export default function AgeVerification() {
   const [showDeny, setShowDeny] = useState(false);
 
   useEffect(() => {
-    // Check localStorage on the client side to set isVerified
     if (typeof window !== 'undefined') {
       const verified = localStorage.getItem('ageVerified') === 'true';
       setIsVerified(verified);
