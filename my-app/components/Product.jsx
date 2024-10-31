@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Slider from "react-slick"; // Import the slider
 import "./Product.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const categories = [
   {
@@ -75,7 +76,7 @@ const Categories3D = () => {
   return (
     <div className="container mx-auto py-12 px-4 -mt-16 -mb-12 sm:mb-16">
       <h2 className="text-4xl font-extrabold tracking-wider text-center mb-8 text-gray-800 uppercase">
-        CatÃ©gories de Premier Plan
+        Categories de Premier Plan
       </h2>
 
       {/* Slider for mobile view */}
@@ -97,6 +98,7 @@ const Categories3D = () => {
                   <Image
                     src={category.image}
                     alt={category.name}
+                    loading="lazy"
                     layout="responsive"
                     width={150}
                     height={150}
@@ -128,14 +130,15 @@ const Categories3D = () => {
           >
             <Link href={category.link}>
               <div className="relative border-2 rounded-lg overflow-hidden">
-                <Image
+                <LazyLoadImage
                   src={category.image}
                   alt={category.name}
+                  loading="lazy"
+                  // effect="blur"
                   width={200} // Adjusted width for desktop
                   height={200} // Adjusted height for desktop
                   className="object-cover rounded-lg"
                   quality={70}
-                  loading="lazy"
                 />
               </div>
               <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">

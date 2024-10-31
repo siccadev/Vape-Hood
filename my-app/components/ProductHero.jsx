@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import Link from "next/link";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
   return (
@@ -53,14 +54,14 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
             <SwiperSlide key={index}>
               <div className="p-4 flex flex-col justify-center items-center text-center border max-h-64 border-gray-300 rounded-xl bg-white transition transform z-50">
                 <a href={data.link} target="_blank" rel="noopener noreferrer">
-                  <Image
+                  <LazyLoadImage
                     src={data.image}
                     alt={data.title}
+                    loading="lazy"
                     width={160}
                     height={160}
                     className="rounded-lg"
                     quality={85}
-                    loading="lazy"
                   />
                 </a>
                 <div className="p-4">

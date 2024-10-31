@@ -334,11 +334,11 @@ const ProductComponent = () => {
                   <Image
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
+                    quality={70}
                     width={250}
                     height={250}
                     className="object-cover w-full rounded-t-lg mb-2"
-                    quality={70}
-                    loading="lazy"
                   />
                   <h3 className="text-sm font-bold text-black mb-1">{product.name}</h3>
                   <p className=" text-base font-bold">{product.originalPrice}</p>
