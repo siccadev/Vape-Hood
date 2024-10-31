@@ -54,14 +54,14 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
             <SwiperSlide key={index}>
               <div className="p-4 flex flex-col justify-center items-center text-center border max-h-64 border-gray-300 rounded-xl bg-white transition transform z-50">
                 <a href={data.link} target="_blank" rel="noopener noreferrer">
-                  <LazyLoadImage
+                  <Image
                     src={data.image}
                     alt={data.title}
                     loading="lazy"
+                    quality={85}
+                    className="rounded-lg"
                     width={160}
                     height={160}
-                    className="rounded-lg"
-                    quality={85}
                   />
                 </a>
                 <div className="p-4">

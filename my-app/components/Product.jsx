@@ -130,15 +130,14 @@ const Categories3D = () => {
           >
             <Link href={category.link}>
               <div className="relative border-2 rounded-lg overflow-hidden">
-                <LazyLoadImage
+                <Image
                   src={category.image}
                   alt={category.name}
-                  loading="lazy"
-                  // effect="blur"
                   width={200} // Adjusted width for desktop
                   height={200} // Adjusted height for desktop
                   className="object-cover rounded-lg"
                   quality={70}
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">
