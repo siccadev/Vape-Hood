@@ -138,7 +138,7 @@ const Checkout = () => {
             ------------------
             Livraison: 8.000 TND
             ------------------
-            TOTAL TTC: ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8)).toFixed(3)} TND`;
+            TOTAL : ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8)).toFixed(3)} TND`;
 
             try {
                   const response = await fetch('http://localhost:4000/send-message', {
@@ -467,7 +467,7 @@ const Checkout = () => {
                                                 <p>Total Livraison: <span className="total-value">8.000 TND</span></p>
                                           </div>
                                           <p className="cart-total-ttc">
-                                                TOTAL TTC: <span className="total-value">{cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8).toFixed(3)} TND</span>
+                                                TOTAL : <span className="total-value">{cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8).toFixed(3)} TND</span>
                                           </p>
                                     </div>
                               </div>

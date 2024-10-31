@@ -193,7 +193,7 @@ const ProductPage = () => {
                         </div>
                         <div className="price-container">
                             <span className="current-price">{product?.price ? `${product.price.toFixed(2)} TND` : "Prix"}</span>
-                            <span className="tax-info">TTC</span>
+                            <span className="tax-info"></span>
                         </div>
                         <div className="availability">
                             <span className="availability-label">Disponibilité:</span>
@@ -266,7 +266,7 @@ const ProductPage = () => {
                                     <p>Il y a {quantity} articles dans votre panier.</p>
                                     <p>Total produits: {cartTotal.toFixed(3)} TND</p>
                                     <p>Frais de port: 8.000 TND</p>
-                                    <p>Total: {(cartTotal + 8).toFixed(3)} TND TTC</p>
+                                    <p>Total: {(cartTotal + 8).toFixed(3)} TND</p>
                                     <div className="popup-actions">
                                         <Link href="/pages/Cart" className="order-button">Commander</Link>
                                         <button className="continue-shopping-button" onClick={closePopup}>

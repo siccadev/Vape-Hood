@@ -50,7 +50,7 @@ const Cart = () => {
           </p>
           <hr />
           <div className="mt-4 p-4 bg-gray-100 rounded-lg flex justify-between items-center">
-            <p className="text-lg font-bold">Total TTC</p>
+            <p className="text-lg font-bold">Total</p>
             <p className="text-red-500 text-2xl font-bold">0,000 DT</p>
           </div>
 
