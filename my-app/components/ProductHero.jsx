@@ -59,6 +59,8 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
                     width={160}
                     height={160}
                     className="rounded-lg"
+                    quality={85}
+                    loading="lazy"
                   />
                 </a>
                 <div className="p-4">
@@ -79,14 +81,14 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
           <FontAwesomeIcon icon={faChevronRight} size="lg" />
         </div>
         */}
-        
+
         <div className="swiper-pagination mt-6 flex justify-center"></div>
       </div>
-      
+
       {linkurl && (
         <div className="flex justify-end -mt-20 sm:-mt-10 mr-2 sm:mr-20">
-          <Link 
-            href={linkurl} 
+          <Link
+            href={linkurl}
             className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition-all z-10"
             style={{ touchAction: 'manipulation' }}
           >

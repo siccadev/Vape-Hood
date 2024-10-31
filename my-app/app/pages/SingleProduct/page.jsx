@@ -30,7 +30,7 @@ const ProductPage = () => {
             const id = urlParams.get("id");
             const name = urlParams.get("name");
             // and so on...
-            
+
             const price = urlParams.get("price");
             const image = urlParams.get("image");
             const description = urlParams.get("description");
@@ -172,6 +172,8 @@ const ProductPage = () => {
                                 width={760}
                                 height={500}
                                 className="product-image"
+                                quality={70}
+                                loading="lazy"
                             />
                             <div className="zoom-lens" ref={lensRef}></div>
                             <div className="zoom-result" ref={resultRef}></div>
@@ -253,7 +255,7 @@ const ProductPage = () => {
                             </div>
                             <div className="popup-content">
                                 <div className="popup-product-info">
-                                    <img src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image" />
+                                    <Image src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image product-image" quality={70} loading="lazy" />
                                     <div className="popup-product-details">
                                         <h3>{product?.name || "Produit"}</h3>
                                         <p>Quantité: {quantity}</p>
@@ -275,9 +277,10 @@ const ProductPage = () => {
                             </div>
                         </div>
                     </div>
-                )}
-            </div>
-        </Suspense>
+                )
+                }
+            </div >
+        </Suspense >
     );
 };
 

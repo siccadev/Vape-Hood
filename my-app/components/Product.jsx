@@ -2,9 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import Slider from "react-slick"; // Import the slider
-import "./Product.css"; 
+import "./Product.css";
 
 const categories = [
   {
@@ -92,10 +92,12 @@ const Categories3D = () => {
                     src={category.image}
                     alt={category.name}
                     layout="responsive"
-                    width={150} // Reduced image width for mobile
-                    height={150} // Reduced image height for mobile
+                    width={150}
+                    height={150}
                     className="rounded-lg"
-                    style={{ borderRadius: '30%' }} // Optional: Keep rounded corners
+                    style={{ borderRadius: '30%' }}
+                    quality={85}
+                    loading="lazy"
                   />
                 </div>
                 {/* Centered name under the image */}
@@ -138,12 +140,13 @@ const Categories3D = () => {
                   <Image
                     src={category.image}
                     alt={category.name}
-                    width={300} // Adjusted width for desktop
-                    height={300} // Adjusted height for desktop
-                    className="w-full h-auto object-cover rounded-lg" // Ensure responsiveness
+                    width={300}
+                    height={300}
+                    className="w-full h-auto object-cover rounded-lg"
+                    quality={70}
+                    loading="lazy"
                   />
                 </div>
-                {/* Centered name under the image */}
                 <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">
                   {category.name}
                 </h3>

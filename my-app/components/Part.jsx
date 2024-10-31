@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Swiper core styles
 import "swiper/css/navigation"; // Swiper navigation styles
@@ -39,10 +40,14 @@ const Slider = () => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img
+            <Image
               src={image}
               alt={`Slide ${index + 1}`}
               className="w-full h-auto object-contain"
+              width={150}
+              height={150}
+              quality={70}
+              loading="lazy"
             />
           </SwiperSlide>
         ))}

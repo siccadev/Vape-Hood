@@ -18,7 +18,7 @@ const Cart = () => {
   const handleRemoveItem = (name) => {
     const updatedCartItems = cartItems.filter((item) => item.name !== name);
     setCartItems(updatedCartItems);
-    
+
     if (typeof window !== 'undefined') {
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
     }
@@ -84,12 +84,14 @@ const Cart = () => {
                     width={100}
                     height={100}
                     className="rounded-lg"
+                    quality={70}
+                    loading="lazy"
                   />
                   <div className="">
                     <h3 className="text-base font-semibold">{item.name}</h3>
                     <p className="text-sm text-gray-500">{item.description}</p>
                   </div>
-                  
+
                 </div>
 
 

@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./Checkout.css";
+import Image from "next/image";
+
 
 const Checkout = () => {
       const [formData, setFormData] = useState({
@@ -26,10 +28,11 @@ const Checkout = () => {
 
       useEffect(() => {
             if (typeof window !== 'undefined') {
-            
-                        const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
-                        setCartItems(storedCartItems);} 
-                  }, []);
+
+                  const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+                  setCartItems(storedCartItems);
+            }
+      }, []);
 
       const handleChange = (e) => {
             const { name, value, id, checked } = e.target;
@@ -438,7 +441,13 @@ const Checkout = () => {
                                           {cartItems.map((item, index) => (
                                                 <li key={index} className="cart-item">
                                                       <div className="cart-item-image">
-                                                            <img src={item.image} alt={item.name} />
+                                                            <Image src={item.image}
+                                                                  alt={item.name}
+                                                                  width={250}
+                                                                  height={250}
+                                                                  quality={70}
+                                                                  loading="lazy"
+                                                            />
                                                       </div>
                                                       <div className="cart-item-details">
                                                             <p className="item-name">{item.name}</p>
@@ -475,14 +484,14 @@ const Checkout = () => {
                                     <h2>Commande confirmée</h2>
                                     <p>Nous vous contacterons pour confirmer la commande.</p>
                                     <button onClick={() => {
-                                              if (typeof window !== 'undefined') {
+                                          if (typeof window !== 'undefined') {
                                                 localStorage.clear();
-                                                 window.location.href = "/";
-                                                }
-                                                setShowModal(false);
-                                                }}>
-                                                       Retour à l{"'"}accueil
-                                                       </button>
+                                                window.location.href = "/";
+                                          }
+                                          setShowModal(false);
+                                    }}>
+                                          Retour à l{"'"}accueil
+                                    </button>
                               </div>
                         </div>
                   )}

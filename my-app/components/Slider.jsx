@@ -49,7 +49,8 @@ const Slider = () => {
             {/* Adjusting the height for phone view */}
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].image})` }}  // Removed comment inside style
-                className='w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] bg-center bg-cover duration-500'
+                className='w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] bg-center bg-cover duration-500' quality={70}
+                loading="lazy"
             ></div>
             {/* Left Arrow */}
             <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
