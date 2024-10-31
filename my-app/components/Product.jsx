@@ -75,7 +75,7 @@ const Categories3D = () => {
   return (
     <div className="container mx-auto py-12 px-4 -mt-16 -mb-12 sm:mb-16">
       <h2 className="text-4xl font-extrabold tracking-wider text-center mb-8 text-gray-800 uppercase">
-        Catégories de Premier Plan
+        CatÃ©gories de Premier Plan
       </h2>
 
       {/* Slider for mobile view */}
@@ -102,10 +102,6 @@ const Categories3D = () => {
                     height={150}
                     className="rounded-lg"
                     style={{ borderRadius: '30%' }}
-
-                    quality={85}
-                    loading="lazy"
-
                   />
                 </div>
                 <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">
@@ -117,42 +113,37 @@ const Categories3D = () => {
         </Slider>
       </div>
 
-
-      {/* Grid layout for larger screens */}
-      <div className="hidden lg:block">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"> {/* Adjusted gap for less space */}
-          {categories.map((category) => (
-            <motion.div
-              key={category.id}
-              onClick={() => handleClick(category)}
-              className="group relative rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-500"
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              animate={clicked === category.id ? { scale: 1.2, opacity: 0 } : { scale: 1, opacity: 1 }}
-              transition={{ duration: 0.7 }}
-            >
-              <Link href={category.link}>
-                <div className="relative border-2 rounded-lg overflow-hidden"> {/* Keep this for desktop view */}
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    width={300}
-                    height={300}
-                    className="w-full h-auto object-cover rounded-lg"
-                    quality={70}
-                    loading="lazy"
-                  />
-                </div>
-                <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">
-                  {category.name}
-                </h3>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-
-
+      {/* Horizontal layout for larger screens */}
+      <div className="hidden lg:flex justify-center gap-4"> {/* Flexbox for single line layout */}
+        {categories.map((category) => (
+          <motion.div
+            key={category.id}
+            onClick={() => handleClick(category)}
+            className="group relative rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-500"
+            initial={{ scale: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            animate={clicked === category.id ? { scale: 1.2, opacity: 0 } : { scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <Link href={category.link}>
+              <div className="relative border-2 rounded-lg overflow-hidden">
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  width={200} // Adjusted width for desktop
+                  height={200} // Adjusted height for desktop
+                  className="object-cover rounded-lg"
+                  quality={70}
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">
+                {category.name}
+              </h3>
+            </Link>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
