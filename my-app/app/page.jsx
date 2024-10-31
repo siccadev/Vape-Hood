@@ -127,7 +127,7 @@ const Home = () => {
       />
 
 
-      <Banner2 videoLink="/featured-page" />
+      {/* <Banner2 videoLink="/featured-page" /> */}
       <ProductHero Heroheading="découvrez notre" linkurl='pages/Attomissseurs' SubHeroheading="ATOMISEURS" vapedata={[
         {
           image: ie6,
@@ -162,7 +162,7 @@ const Home = () => {
 
       ]} />
 
-      <Bnner videoLink="/featured-page" />
+      {/* <Bnner videoLink="/featured-page" /> */}
       <ProductHero Heroheading="découvrez notre" linkurl='pages/E-cigarettes' SubHeroheading="E-CIGARETTES" vapedata={[
         {
           image: ie12,
@@ -198,7 +198,7 @@ const Home = () => {
       ]} />
 
 
-      <Banner1 videoLink="/featured-page" />
+      {/* <Banner1 videoLink="/featured-page" /> */}
       <ProductHero Heroheading="découvrez notre" linkurl='pages/E-liquides' SubHeroheading="E-LIQUIDES" vapedata={[
         {
           image: ie18,
