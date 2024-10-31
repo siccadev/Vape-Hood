@@ -33,8 +33,14 @@ const categories = [
   },
   {
     id: 5,
-    name: "ACCESSOIRES",
+    name: "BOX",
     image: "/e.jpg",
+    link: "/pages/Box",
+  },
+  {
+    id: 6,
+    name: "Accessoires",
+    image: "/b01.webp",
     link: "/pages/Accessoires",
   },
 ];
@@ -52,7 +58,7 @@ const Categories3D = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2, // Show 2 images per slide
+    slidesToShow: 2, // Show 2 images per slide for mobile
     slidesToScroll: 1,
     responsive: [
       {
@@ -75,11 +81,11 @@ const Categories3D = () => {
       {/* Slider for mobile view */}
       <div className="lg:hidden">
         <Slider {...sliderSettings}>
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <motion.div
               key={category.id}
               onClick={() => handleClick(category)}
-              className="group relative rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-500 px-2" // Added padding between images
+              className="group relative rounded-lg overflow-hidden cursor-pointer transform transition-transform duration-500 px-2"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -96,11 +102,12 @@ const Categories3D = () => {
                     height={150}
                     className="rounded-lg"
                     style={{ borderRadius: '30%' }}
+
                     quality={85}
                     loading="lazy"
+
                   />
                 </div>
-                {/* Centered name under the image */}
                 <h3 className="text-center mt-2 font-extrabold text-xl font-sans tracking-wider text-black">
                   {category.name}
                 </h3>
@@ -108,18 +115,8 @@ const Categories3D = () => {
             </motion.div>
           ))}
         </Slider>
-
-        {/* Moving line under the slider */}
-        {/* <div className="flex justify-center mt-4">
-          <div
-            className={`h-1 bg-gray-500 transition-all duration-500`} // Slider line color
-            style={{
-              width: '50%', 
-              transform: `translateX(${activeIndex * 50}%)`, // Updated the percentage to work correctly with 2 images per slide
-            }}
-          />
-        </div> */}
       </div>
+
 
       {/* Grid layout for larger screens */}
       <div className="hidden lg:block">
@@ -154,6 +151,8 @@ const Categories3D = () => {
             </motion.div>
           ))}
         </div>
+
+
       </div>
     </div>
   );
