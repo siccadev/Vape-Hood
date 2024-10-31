@@ -18,6 +18,7 @@ const links = [
 const mobileLinks = [
     { url: "Home", title: "Home", linkk: "/", image: "/Home.png", size: 30 },
     { url: "E-cigarettes", title: "E-cigarettes", linkk: "/pages/E-cigarettes", image: "/aa.webp", size: 30 },
+    { url: "Box", title: "Box", linkk: "/pages/Box", image: "/box.png", size: 20 },
     { url: "Attomissseurs", title: "Attomissseurs", linkk: "/pages/Attomissseurs", image: "/bb.webp", size: 30 },
     { url: "Accessoires", title: "Accessoires", linkk: "/pages/Accessoires", image: "/cc.png", size: 30 },
     { url: "E-liquides", title: "E-liquides", linkk: "/pages/E-liquides", image: "/ddd.png", size: 30 },
@@ -25,6 +26,7 @@ const mobileLinks = [
     { url: "Cart", title: "Cart", linkk: "/pages/Cart", image: "/cart.png", size: 30 },
     { url: "About", title: "About Us", linkk: "/pages/About", image: "/about.png", size: 20 },
     { url: "Contact", title: "Contact Us", linkk: "/pages/Contact", image: "/contact.png", size: 20 },
+
 ];
 
 const links2 = [
