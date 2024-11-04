@@ -2,9 +2,10 @@ import localFont from "next/font/local";
 import "../styles/globals.css";
 import Navbar from "@/components/Navbar";
 import BackToTopButton from "@/components/Buttont"; // Import the new component
-import Footer from "@/components/Footer"
-import Tel from "@/components/Tel"
+import Footer from "@/components/Footer";
+import Tel from "@/components/Tel";
 import TabBar from "@/components/Tabar";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/vapehood.png"  />
+        <link rel="icon" href="/vapehood.svg" type="image/svg+xml" />
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
@@ -37,6 +38,6 @@ export default function RootLayout({ children }) {
         <BackToTopButton />
         {/* <TabBar /> */}
       </body>
-    </html >
+    </html>
   );
 }
