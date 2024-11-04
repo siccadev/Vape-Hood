@@ -18,7 +18,7 @@ const Cart = () => {
   const handleRemoveItem = (name) => {
     const updatedCartItems = cartItems.filter((item) => item.name !== name);
     setCartItems(updatedCartItems);
-    
+
     if (typeof window !== 'undefined') {
       localStorage.setItem("cart", JSON.stringify(updatedCartItems));
     }
@@ -50,7 +50,7 @@ const Cart = () => {
           </p>
           <hr />
           <div className="mt-4 p-4 bg-gray-100 rounded-lg flex justify-between items-center">
-            <p className="text-lg font-bold">Total TTC</p>
+            <p className="text-lg font-bold">Total</p>
             <p className="text-red-500 text-2xl font-bold">0,000 DT</p>
           </div>
 
@@ -84,12 +84,14 @@ const Cart = () => {
                     width={100}
                     height={100}
                     className="rounded-lg"
+                    quality={70}
+                    loading="lazy"
                   />
                   <div className="">
                     <h3 className="text-base font-semibold">{item.name}</h3>
                     <p className="text-sm text-gray-500">{item.description}</p>
                   </div>
-                  
+
                 </div>
 
 

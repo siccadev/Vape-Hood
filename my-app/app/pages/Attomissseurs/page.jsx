@@ -256,7 +256,7 @@ const ProductComponent = () => {
 
 
       <div className="  py-8 px-2  main_width">
-      <h2 className="font-extrabold text-3xl  font-sans text-center mb-6" style={{ color: 'red' }}>
+        <h2 className="font-extrabold text-3xl  font-sans text-center mb-6" style={{ color: 'red' }}>
           Atomiseurs reconstructibles, votre tank au meilleur prix en tunisie
 
         </h2>
@@ -288,6 +288,8 @@ const ProductComponent = () => {
                     width={250}
                     height={250}
                     className="object-cover w-full rounded-t-lg mb-2"
+                    quality={70}
+                    loading="lazy"
                   />
                   <h3 className="text-sm font-bold text-black mb-1">{product.name}</h3>
                   <p className=" text-base font-bold">{product.originalPrice}</p>

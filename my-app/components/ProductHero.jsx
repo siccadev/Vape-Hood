@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import Link from "next/link";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
   return (
@@ -56,9 +57,11 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
                   <Image
                     src={data.image}
                     alt={data.title}
+                    loading="lazy"
+                    quality={85}
+                    className="rounded-lg"
                     width={160}
                     height={160}
-                    className="rounded-lg"
                   />
                 </a>
                 <div className="p-4">
@@ -79,14 +82,14 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
           <FontAwesomeIcon icon={faChevronRight} size="lg" />
         </div>
         */}
-        
+
         <div className="swiper-pagination mt-6 flex justify-center"></div>
       </div>
-      
+
       {linkurl && (
         <div className="flex justify-end -mt-20 sm:-mt-10 mr-2 sm:mr-20">
-          <Link 
-            href={linkurl} 
+          <Link
+            href={linkurl}
             className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition-all z-10"
             style={{ touchAction: 'manipulation' }}
           >

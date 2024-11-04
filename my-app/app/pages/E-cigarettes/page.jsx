@@ -71,10 +71,10 @@ const products = [
   { id: 74, name: 'KIT POD DRAG E60 VOOPOO', image: '/kit-pod-drag-e60-voopoo.webp', originalPrice: '190,000 TND' ,Catégories: "Kit Box",Disponibilité: "En stock", Marque: "VOOPOO",Description:"VOOPOO propose un pod capable de répondre à vos moindres sollicitations ! La cigarette électronique Drag E60 renferme une batterie de 2550 mah qui active le chipset Gen TT 2.0. Cette puce électronique offre une..." },
   { id: 75, name: 'Gen Max', image: '/téléchargement.jpeg', originalPrice: '120,000 TND' ,Catégories: "Pod",Disponibilité: "En stock", Marque: "Vaporesso",Description:"" },
 
-  {id:79,name:'GTX80',image:'/mm.jpeg',originalPrice:'100,000TND',Disponibilité:"En stock",Marque:"VAPORESSO"}
+  { id: 79, name: 'GTX80', image: '/mm.jpeg', originalPrice: '100,000TND', Disponibilité: "En stock", Marque: "VAPORESSO" }
 
 ];
- 
+
 
 
 
@@ -306,7 +306,7 @@ const ProductComponent = () => {
 
 
       <div className="  py-8 px-2  main_width">
-      <h2 className="font-extrabold text-3xl -ml-10 font-sans text-center mb-6" style={{ color: 'red' }}>
+        <h2 className="font-extrabold text-3xl -ml-10 font-sans text-center mb-6" style={{ color: 'red' }}>
           E-cigarette en tunisie - Explorez la Liberté de Vapoter avec Style
         </h2>
         <p className="text-center text-gray-500 mb-8">Bienvenue dans notre catégorie E-cigarettes, où l{"'"}innovation et la liberté de vapoter se rencontrent pour créer une expérience de vapotage exceptionnelle. Découvrez notre vaste sélection d{"'"}e-cigarettes de haute qualité, conçues pour répondre aux besoins de tous les amateurs de vapotage, des débutants aux experts. Nous vous invitons à explorer notre collection diversifiée et à choisir l{"'"}e-cigarette qui correspond parfaitement à votre style de vie et à vos préférences.</p>
@@ -334,6 +334,8 @@ const ProductComponent = () => {
                   <Image
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
+                    quality={70}
                     width={250}
                     height={250}
                     className="object-cover w-full rounded-t-lg mb-2"

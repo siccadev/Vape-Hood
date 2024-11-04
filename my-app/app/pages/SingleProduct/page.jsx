@@ -30,7 +30,7 @@ const ProductPage = () => {
             const id = urlParams.get("id");
             const name = urlParams.get("name");
             // and so on...
-            
+
             const price = urlParams.get("price");
             const image = urlParams.get("image");
             const description = urlParams.get("description");
@@ -172,6 +172,8 @@ const ProductPage = () => {
                                 width={760}
                                 height={500}
                                 className="product-image"
+                                quality={70}
+                                loading="lazy"
                             />
                             <div className="zoom-lens" ref={lensRef}></div>
                             <div className="zoom-result" ref={resultRef}></div>
@@ -191,7 +193,7 @@ const ProductPage = () => {
                         </div>
                         <div className="price-container">
                             <span className="current-price">{product?.price ? `${product.price.toFixed(2)} TND` : "Prix"}</span>
-                            <span className="tax-info">TTC</span>
+                            <span className="tax-info"></span>
                         </div>
                         <div className="availability">
                             <span className="availability-label">Disponibilité:</span>
@@ -253,7 +255,7 @@ const ProductPage = () => {
                             </div>
                             <div className="popup-content">
                                 <div className="popup-product-info">
-                                    <img src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image" />
+                                    <Image src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image product-image" quality={70} loading="lazy" />
                                     <div className="popup-product-details">
                                         <h3>{product?.name || "Produit"}</h3>
                                         <p>Quantité: {quantity}</p>
@@ -264,7 +266,7 @@ const ProductPage = () => {
                                     <p>Il y a {quantity} articles dans votre panier.</p>
                                     <p>Total produits: {cartTotal.toFixed(3)} TND</p>
                                     <p>Frais de port: 8.000 TND</p>
-                                    <p>Total: {(cartTotal + 8).toFixed(3)} TND TTC</p>
+                                    <p>Total: {(cartTotal + 8).toFixed(3)} TND</p>
                                     <div className="popup-actions">
                                         <Link href="/pages/Cart" className="order-button">Commander</Link>
                                         <button className="continue-shopping-button" onClick={closePopup}>
@@ -275,9 +277,10 @@ const ProductPage = () => {
                             </div>
                         </div>
                     </div>
-                )}
-            </div>
-        </Suspense>
+                )
+                }
+            </div >
+        </Suspense >
     );
 };
 
