@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "startsvr": "nodemon server/index.js",
+    "startsvr": "nodemon api/sendMessage.js",
     "lint": "next lint"
   },
   "dependencies": {
