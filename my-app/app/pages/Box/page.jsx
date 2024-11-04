@@ -15,7 +15,7 @@ const products = [
   { id: 13, name: 'Box Armour Max Vaporesso', image: '/box-armour-max-vaporesso.webp', originalPrice: '249,000 TND', Catégories: "Box and Mod électronique", Disponibilité: "En stock", Marque: "Vaporesso", Description: "La box Armour Max, est alimentée par deux accus 18650 ou 21700, ce qui offre une autonomie généreuse" },
   { id: 15, name: 'BOX AEGIS TOUCH T200 - GEEKVAPE', image: '/box-aegis-touch-t200-geekvape (1).webp', originalPrice: '239,000 TND', Catégories: "Box and Mod électronique", Disponibilité: "En stock", Marque: "Geekvape", Description: "GeekVape parvient toujours à surpasser nos attentes. Avec sa box Aegis Touch T200," },
  
-  { id: 73, name: 'GEN MAX', image: '/gen.jpeg', originalPrice: '28,000 TND', Disponibilité: "En stock", Marque: "Vaporesso",  },
+  { id: 73, name: 'GEN MAX', image: '/gen.jpeg', originalPrice: '28,000 TND', Disponibilité: "En stock", Marque: "Vaporesso", Catégories: "Box and Mod électronique", Description:"" },
 
   { id: 18, name: 'BOX Z200 GEEKVAPE', image: '/box-z200-geekvape.webp', originalPrice: '219,000 TND', Catégories: "Box and Mod électronique", Disponibilité: "En stock", Marque: "Geekvape", Description: "GEEKVAPE EST UN FABRICANT À L'IMAGINATION DÉBORDANTE QUI DÉVOILE LA NOUVELLE BOX Z200" },
   { id: 19, name: 'BOX AEGIS L200 CLASSIC GEEKVAPE', image: '/box-aegis-l200-classic-geekvape.webp', originalPrice: '249,000 TND', Catégories: "Box and Mod électronique", Disponibilité: "En stock", Marque: "Geekvape", Description: "Geekvape revient en force avec la Box Aegis L200 Classic ! Présent dans le kit Aegis L200 CLassic" },
