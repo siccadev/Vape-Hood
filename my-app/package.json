@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "startsvr": "nodemon server/index.js",
+    "startsvr": "nodemon api/sendMessage.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,10 +15,12 @@
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "framer-motion": "^11.11.10",
+    "http": "^0.0.1-security",
     "i": "^0.3.7",
     "lodash": "^4.17.21",
     "next": "15.0.2",
-    "next-video": "^1.3.1",
+    "next-video": "^1.3.3",
+    "ngrok": "^5.0.0-beta.2",
     "npm": "^10.9.0",
     "rc-slider": "^11.1.7",
     "react": "19.0.0-rc-02c0e824-20241028",

@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const twilio = require("twilio");
 
+const port = 4000;
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,7 +24,6 @@ app.post("/send-message", (req, res) => {
             .catch((error) => res.status(500).json({ success: false, error }));
 });
 
-const port = process.env.PORT || 4000;
 app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
+      console.log("Server is running on port ${port}");
 });

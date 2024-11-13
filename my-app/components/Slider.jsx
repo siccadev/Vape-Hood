@@ -7,13 +7,16 @@ const Slider = () => {
 
     const slides = [
         {
-            image: '/fb1.jpg'
+            image: '/vapehood1.jpg'
         },
         {
-            image: '/fb2.jpg',
+            image: '/vapehood2.jpg',
         },
         {
-            image: '/fb3.jpg',
+            image: '/vapehood3.jpg',
+        },
+        {
+            image: '/vapehood4.jpg',
         },
     ];
 
@@ -48,9 +51,9 @@ const Slider = () => {
         <div className='  w-full m-auto py-16 px-0 relative group -mt-24'>
             {/* Adjusting the height for phone view */}
             <div
-                style={{ backgroundImage: `url(${slides[currentIndex].image})` }}  // Removed comment inside style
-                className='w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] bg-center bg-cover duration-500' quality={70}
-                loading="lazy"
+                style={{ backgroundImage: `url(${slides[currentIndex].image})`,backgroundSize: 'contain', }}  // Removed comment inside style
+                className='w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[600px] bg-center bg-cover duration-500 '
+            
             ></div>
             {/* Left Arrow */}
             <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>

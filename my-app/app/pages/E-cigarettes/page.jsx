@@ -69,7 +69,7 @@ const products = [
  
   { id: 73, name: 'KIT AEGIS L200 CLASSIC GEEKVAPE', image: '/kit-aegis-l200-classic-geekvape.webp', originalPrice: '279,000 TND' ,Catégories: "Kit Box",Disponibilité: "En stock", Marque: "Geekvape",Description:"Geekvape combine le clearomiseur Zeus max SubOhm et la box Aegis Legend 2 Classic pour offrir un kit impressionnant. Totalement waterproof le mod électronique de GeekVape supporte également la poussière et..." },
   { id: 74, name: 'KIT POD DRAG E60 VOOPOO', image: '/kit-pod-drag-e60-voopoo.webp', originalPrice: '190,000 TND' ,Catégories: "Kit Box",Disponibilité: "En stock", Marque: "VOOPOO",Description:"VOOPOO propose un pod capable de répondre à vos moindres sollicitations ! La cigarette électronique Drag E60 renferme une batterie de 2550 mah qui active le chipset Gen TT 2.0. Cette puce électronique offre une..." },
-  { id: 75, name: 'Gen Max', image: '/téléchargement.jpeg', originalPrice: '120,000 TND' ,Catégories: "Pod",Disponibilité: "En stock", Marque: "Vaporesso",Description:"" },
+ 
 
   { id: 79, name: 'GTX80', image: '/mm.jpeg', originalPrice: '100,000TND', Disponibilité: "En stock", Marque: "VAPORESSO" }
 

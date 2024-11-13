@@ -255,7 +255,7 @@ const ProductPage = () => {
                             </div>
                             <div className="popup-content">
                                 <div className="popup-product-info">
-                                    <Image src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image product-image" quality={70} loading="lazy" />
+                                    <Image src={product?.image || "/default-image.jpg"} alt={product?.name || "Produit"} className="popup-product-image product-image" quality={70} loading="lazy"width={250} height={250} />
                                     <div className="popup-product-details">
                                         <h3>{product?.name || "Produit"}</h3>
                                         <p>Quantité: {quantity}</p>

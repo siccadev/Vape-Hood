@@ -141,7 +141,7 @@ const Checkout = () => {
             TOTAL : ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8)).toFixed(3)} TND`;
 
             try {
-                  const response = await fetch('http://localhost:4000/send-message', {
+                  const response = await fetch('http://https://5fb4-197-244-101-47.ngrok-free.app/send-message', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ message })
