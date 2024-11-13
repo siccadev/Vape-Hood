@@ -72,15 +72,6 @@ const ProductHero = ({ Heroheading, SubHeroheading, vapedata, linkurl }) => {
           ))}
         </Swiper>
 
-        {/* Custom Navigation Buttons with Font Awesome */}
-        {/* 
-        <div className="swiper-button-prev absolute top-1/2 transform -translate-y-1/2 left-0 z-10 w-12 h-12 flex items-center justify-center text-white rounded-full cursor-pointer">
-          <FontAwesomeIcon icon={faChevronLeft} size="lg" />
-        </div>
-        <div className="swiper-button-next absolute top-1/2 transform -translate-y-1/2 right-0 z-10 w-12 h-12 flex items-center justify-center text-white rounded-full cursor-pointer">
-          <FontAwesomeIcon icon={faChevronRight} size="lg" />
-        </div>
-        */}
 
         <div className="swiper-pagination mt-6 flex justify-center"></div>
       </div>
