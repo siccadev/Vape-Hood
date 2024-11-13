@@ -11,7 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import './Tabar.css'; // Import the CSS file for styling
+import './Tabar.css';
 
 const TabBar = () => {
   const pathname = usePathname();
