@@ -4,7 +4,6 @@ import Navbar from "@/components/Navbar";
 import BackToTopButton from "@/components/Buttont"; // Import the new component
 import Footer from "@/components/Footer";
 import Tel from "@/components/Tel";
-import TabBar from "@/components/Tabar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,7 +36,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <BackToTopButton />
-        {/* <TabBar /> */}
+    
       </body>
     </html>
   );
