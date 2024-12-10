@@ -74,9 +74,9 @@ const Navbar = () => {
         <div style={{ backgroundColor: `${color}` }} className="shadow-lg w-full h-20 z-[100] ease-in-out duration-300">
             <div className='flex justify-between items-center w-full h-full px-2 cursor-pointer'>
                 <Link href="/" passHref>
-                    <div className='flex items-center -ml-5 cursor-pointer'>
-                        <Image src={vapehood} alt='Vapehood Logo' width={100} />
-                        <h1 style={{ color: `${textColor}` }} className='font-bold text-3xl -ml-5'>
+                    <div className='flex items-center  cursor-pointer'>
+                        <Image src={vapehood} alt='Vapehood Logo' width={70} />
+                        <h1 style={{ color: `${textColor}` }} className='font-bold text-3xl '>
                             VapeHood
                         </h1>
                     </div>
@@ -139,7 +139,7 @@ const Navbar = () => {
                             <Link href="/" passHref>
                                 <div className='flex items-center cursor-pointer'>
                                     <Image src={vapehood} className='-ml-8' alt='Vapehood Logo' width={100} />
-                                    <h1 className='-ml-5 font-extrabold text-3xl font-sans'>VapeHood</h1>
+                                    <h1 className='-ml-1 font-extrabold text-3xl font-sans'>VapeHood</h1>
                                 </div>
                             </Link>
                             <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer'>
