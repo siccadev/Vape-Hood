@@ -104,7 +104,7 @@ const Checkout = () => {
 
       const handleSubmit = async (e) => {
             e.preventDefault();
-
+        
             const newErrors = {};
             if (!formData.firstName) newErrors.firstName = "Veuillez remplir ce champ.";
             if (!formData.lastName) newErrors.lastName = "Veuillez remplir ce champ.";
@@ -114,53 +114,108 @@ const Checkout = () => {
             if (!formData.ville) newErrors.ville = "Veuillez remplir ce champ.";
             if (!formData.codepostal) newErrors.codepostal = "Veuillez remplir ce champ.";
             if (!formData.gender) newErrors.gender = "Veuillez remplir ce champ.";
-
+        
             if (Object.keys(newErrors).length > 0) {
-                  setErrors(newErrors);
-                  return;
+                setErrors(newErrors);
+                return;
             }
-
+        
             const message = `Nouvelle commande de ${formData.firstName} ${formData.lastName}:
-            - Genre: ${formData.gender}
-            - Prénom: ${formData.firstName}
-            - Nom: ${formData.lastName}
-            - E-mail: ${formData.email}
-            - Numéro: ${formData.number}
-            - Date de naissance: ${formData.birthDate}
-            - Adresse: ${formData.address}
-            - Ville: ${formData.ville}
-            - Codepostal: ${formData.codepostal}
-            ------------------
-            - Produits:
-            ${cartItems.map((item) => `* ${item.name}, Quantité: ${item.quantity}, Prix: ${item.price}TND`).join("\n")}
-            ------------------
-            Total Produits: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(3)} TND
-            ------------------
-            Livraison: 8.000 TND
-            ------------------
-            TOTAL : ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8)).toFixed(3)} TND`;
+        - Genre: ${formData.gender}
+        - Prénom: ${formData.firstName}
+        - Nom: ${formData.lastName}
+        - E-mail: ${formData.email}
+        - Numéro: ${formData.number}
+        - Date de naissance: ${formData.birthDate}
+        - Adresse: ${formData.address}
+        - Ville: ${formData.ville}
+        - Codepostal: ${formData.codepostal}
+        ------------------
+        - Produits:
+        ${cartItems.map((item) => `* ${item.name}, Quantité: ${item.quantity}, Prix: ${item.price}TND`).join("\n")}
+        ------------------
+        Total Produits: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(3)} TND
+        ------------------
+        Livraison: 8.000 TND
+        ------------------
+        TOTAL : ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8)).toFixed(3)} TND`;
+        
+            const phoneNumber = '21696877429'; // Recipient's number in international format
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        
+            console.log("WhatsApp URL:", whatsappUrl); // Debugging log
+        
+            // Open WhatsApp with pre-filled message
+            window.open(whatsappUrl, '_blank');
+        };
+        
 
-            try {
-                  const response = await fetch('https://0c8f-197-14-221-119.ngrok-free.app/send-message', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message })
-                  });
 
-                  const data = await response.json();
 
-                  if (data.success) {
-                        console.log("Message sent successfully:", data.sid);
-                        setShowModal(true);  // Show popup on success
-                  } else {
-                        console.error("Error sending message:", data.error);
-                  }
-            } catch (error) {
-                  console.error("Error:", error);
-            }
 
-            setErrors({});
-      };
+
+
+
+
+      // const handleSubmit = async (e) => {
+      //       e.preventDefault();
+
+      //       const newErrors = {};
+      //       if (!formData.firstName) newErrors.firstName = "Veuillez remplir ce champ.";
+      //       if (!formData.lastName) newErrors.lastName = "Veuillez remplir ce champ.";
+      //       if (!formData.number) newErrors.number = "Veuillez remplir ce champ.";
+      //       if (!formData.birthDate) newErrors.birthDate = "Veuillez remplir ce champ.";
+      //       if (!formData.address) newErrors.address = "Veuillez remplir ce champ.";
+      //       if (!formData.ville) newErrors.ville = "Veuillez remplir ce champ.";
+      //       if (!formData.codepostal) newErrors.codepostal = "Veuillez remplir ce champ.";
+      //       if (!formData.gender) newErrors.gender = "Veuillez remplir ce champ.";
+
+      //       if (Object.keys(newErrors).length > 0) {
+      //             setErrors(newErrors);
+      //             return;
+      //       }
+
+      //       const message = `Nouvelle commande de ${formData.firstName} ${formData.lastName}:
+      //       - Genre: ${formData.gender}
+      //       - Prénom: ${formData.firstName}
+      //       - Nom: ${formData.lastName}
+      //       - E-mail: ${formData.email}
+      //       - Numéro: ${formData.number}
+      //       - Date de naissance: ${formData.birthDate}
+      //       - Adresse: ${formData.address}
+      //       - Ville: ${formData.ville}
+      //       - Codepostal: ${formData.codepostal}
+      //       ------------------
+      //       - Produits:
+      //       ${cartItems.map((item) => `* ${item.name}, Quantité: ${item.quantity}, Prix: ${item.price}TND`).join("\n")}
+      //       ------------------
+      //       Total Produits: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(3)} TND
+      //       ------------------
+      //       Livraison: 8.000 TND
+      //       ------------------
+      //       TOTAL : ${(cartItems.reduce((acc, item) => acc + item.price * item.quantity, 8)).toFixed(3)} TND`;
+
+      //       try {
+      //             const response = await fetch('https://0c8f-197-14-221-119.ngrok-free.app/send-message', {
+      //                   method: 'POST',
+      //                   headers: { 'Content-Type': 'application/json' },
+      //                   body: JSON.stringify({ message })
+      //             });
+
+      //             const data = await response.json();
+
+      //             if (data.success) {
+      //                   console.log("Message sent successfully:", data.sid);
+      //                   setShowModal(true);  // Show popup on success
+      //             } else {
+      //                   console.error("Error sending message:", data.error);
+      //             }
+      //       } catch (error) {
+      //             console.error("Error:", error);
+      //       }
+
+      //       setErrors({});
+      // };
 
       return (
             <div className="main-form">

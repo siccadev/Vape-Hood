@@ -39,7 +39,6 @@ import ie26 from '../public/resistances-gti-vaporesso-x5.webp'
 import ie27 from '../public/sony-18650-vtc6-3000mah.webp'
 import ie28 from '../public/coils-a1-mtl-clapton-par-10-e-cig-power.webp'
 import ie29 from '../public/pyrex-sky-solo-plus-vaporesso.webp'
-
 import Offre from '../components/Offre'
 import Part from '../components/Part'
 
